@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="21 one-file web projects built in 21 days. Each one is a single HTML file with its own CSS and JavaScript, nothing to install.">
+<meta name="theme-color" content="#8b5cf6">
+<meta property="og:title" content="21 Days, 21 One-File Projects">
+<meta property="og:description" content="Every project is one HTML file. Open it, change it, ship it.">
+<meta property="og:type" content="website">
+<title>21 Days, 21 One-File Projects</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c3aed'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='34' font-family='sans-serif' font-weight='bold' fill='white'%3E21%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0a0712; --bg-2:#100b1d; --surface:#151020; --surface-2:#0f0a1b; --raised:#1b1430;
+  --ink:#f2ecfb; --muted:#c5bad8; --dim:#8a7fa2;
+  --line:#2a2040; --line-soft:#1f1833;
+  --violet:#c084fc; --violet-soft:#a78bfa; --hot:#c084fc;
+  --w1:#f0abfc; --w2:#7dd3fc; --w3:#fcd34d;
+}
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;
+  background:
+    radial-gradient(1200px 640px at 80% -10%, rgba(192,132,252,.17), transparent 68%),
+    radial-gradient(900px 520px at -12% 6%, #1b143066, transparent 70%),
+    linear-gradient(180deg,var(--bg-2),var(--bg) 58%);
+  color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22560%22%20height%3D%22560%22%3E%3Cg%20fill%3D%22%23c9a6ff%22%20font-family%3D%22monospace%22%20font-size%3D%2213%22%3E%3Cg%20opacity%3D%220.35%22%3E%3Ctext%20x%3D%228%22%20y%3D%2220%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%2253%22%3E%7C%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%2278%22%3E2%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22112%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22158%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22199%22%3E%21%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22280%22%3E%2A%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22411%22%3E8%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22504%22%3E%21%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%2272%22%3EU%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22103%22%3EU%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22275%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22-1%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%2296%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22146%22%3EW%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22233%22%3E%26amp%3B%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22255%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22333%22%3E2%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22357%22%3EX%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%2225%22%3E%2A%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%2248%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%2275%22%3EP%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22100%22%3E3%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22143%22%3E%7C%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22168%22%3E4%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22264%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22333%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22410%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22513%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%2282%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22147%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22206%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22344%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22367%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22421%22%3E4%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22480%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22513%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22101%22%3EP%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22248%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22280%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22341%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22361%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22385%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22474%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22-22%22%3E%7C%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%226%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%2239%22%3E%2F%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%2268%22%3E0%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22214%22%3EU%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22238%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22340%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22511%22%3E%2B%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22558%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%2215%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22162%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22192%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22293%22%3E%25%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22394%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22415%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%2251%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%2297%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22129%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22158%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22281%22%3EU%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22303%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22488%22%3E0%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%2254%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%2277%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22110%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22136%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22169%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22246%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22349%22%3E%7B%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22462%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22531%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22554%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%2254%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%2283%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22395%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22415%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22445%22%3E%25%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22491%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%2271%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22129%22%3E%26amp%3B%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22218%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22239%22%3E3%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22324%22%3E%21%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22344%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22392%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22535%22%3EY%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%2216%22%3E%26amp%3B%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%2250%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%2279%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22271%22%3EP%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22372%22%3EZ%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22405%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22522%22%3E2%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22-13%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%2250%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22131%22%3E-%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22220%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22336%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22433%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22487%22%3E%2A%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22509%22%3E6%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20opacity%3D%220.6%22%3E%3Ctext%20x%3D%228%22%20y%3D%22-10%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22132%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22179%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22336%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22383%22%3E%21%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22462%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22533%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%2219%22%3EZ%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%2248%22%3E%7B%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22233%22%3EP%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22255%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22339%22%3EZ%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22397%22%3E2%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22418%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22526%22%3E8%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%2228%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%2248%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%2270%22%3EU%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22118%22%3E%2F%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22203%22%3E%2B%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22300%22%3E0%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22544%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22-5%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22285%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22312%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22433%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%2220%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22175%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22238%22%3EW%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22291%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22323%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22392%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22448%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%220%22%3EQ%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%2232%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%2253%22%3E%2A%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22204%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22308%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22417%22%3E2%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22441%22%3E%7C%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22508%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%2290%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22286%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22371%22%3EW%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22399%22%3E%7C%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22489%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22537%22%3E%2F%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22-17%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%2271%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22105%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22128%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22249%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22272%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22318%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22345%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22436%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22456%22%3EQ%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22488%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22521%22%3E8%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%2231%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%2277%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22182%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22325%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22387%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22436%22%3EW%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22468%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22542%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%222%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22224%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22329%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22371%22%3EW%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22391%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22416%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22439%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22482%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22503%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22-25%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%224%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%2224%22%3EY%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22113%22%3E3%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22172%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22544%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%2216%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%2248%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22102%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22156%22%3E8%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22295%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22422%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22453%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22480%22%3E%7B%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22-29%22%3EX%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22-8%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22110%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22217%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22251%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22298%22%3E8%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22346%22%3E%2B%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22430%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22471%22%3EX%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22496%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22547%22%3E-%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%2220%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%2299%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22163%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22254%22%3E%2B%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22316%22%3EX%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22358%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22383%22%3EX%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22407%22%3E6%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20opacity%3D%220.95%22%3E%3Ctext%20x%3D%228%22%20y%3D%22222%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22251%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22303%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22362%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22432%22%3E2%3C%2Ftext%3E%3Ctext%20x%3D%228%22%20y%3D%22483%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22132%22%3EY%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22159%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22186%22%3EX%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22207%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22307%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22370%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22445%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22466%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22497%22%3EY%3C%2Ftext%3E%3Ctext%20x%3D%2251%22%20y%3D%22550%22%3E%26amp%3B%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22179%22%3E-%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22277%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22379%22%3E%2B%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22404%22%3E4%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22429%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22462%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22492%22%3E8%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%22512%22%3E%7B%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22121%22%3E0%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22189%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22215%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22239%22%3E%24%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22364%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22388%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22455%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22489%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22123%22%20y%3D%22544%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22-8%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%2250%22%3ET%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22115%22%3E%2A%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22262%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%22158%22%20y%3D%22547%22%3E%26amp%3B%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%2279%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22121%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22155%22%3E%7B%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22177%22%3E4%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22226%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%22194%22%20y%3D%22538%22%3E2%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22119%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22139%22%3EZ%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22167%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22194%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22266%22%3E%2F%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22311%22%3E4%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22427%22%3EU%3C%2Ftext%3E%3Ctext%20x%3D%22240%22%20y%3D%22455%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%2246%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22223%22%3E-%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22370%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%22547%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%226%22%3E%5B%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22202%22%3E%23%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22228%22%3EW%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22250%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22355%22%3EY%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22414%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22318%22%20y%3D%22519%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22-24%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%2230%22%3E%2A%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22190%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22276%22%3E%26amp%3B%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22306%22%3EX%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22145%22%3EZ%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22203%22%3E4%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22225%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22259%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22285%22%3E9%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22307%22%3E%3D%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22336%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22365%22%3E8%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22471%22%3E%2F%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22521%22%3E%7C%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22-26%22%3E%5D%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22-5%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22188%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22264%22%3EV%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22371%22%3EW%3C%2Ftext%3E%3Ctext%20x%3D%22444%22%20y%3D%22512%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22135%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22168%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22192%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22324%22%3EY%3C%2Ftext%3E%3Ctext%20x%3D%22489%22%20y%3D%22451%22%3ER%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%2274%22%3E-%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22197%22%3E%3F%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22283%22%3EK%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22457%22%3E%7D%3C%2Ftext%3E%3Ctext%20x%3D%22520%22%20y%3D%22530%22%3ES%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-repeat:repeat;background-size:560px 560px;
+  mask-image:linear-gradient(180deg,#000 0%,#000 12%,transparent 50%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 12%,transparent 50%);
+}
+.scrollbar{position:fixed;top:0;left:0;height:3px;width:0;z-index:120;
+  background:linear-gradient(90deg,#8b5cf6,#c084fc);box-shadow:0 0 14px #c084fc;transition:width .08s linear}
+.wordmark{font-weight:750;letter-spacing:-.02em;color:var(--ink)}
+.wordmark em{font-style:normal;color:var(--violet)}
+.wrap{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--violet-soft);outline-offset:3px;border-radius:6px}
+button,input{font:inherit;color:inherit}
+.wrap{width:min(1180px,92%);margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{padding:64px 0 34px}
+.kicker{color:var(--dim);font-size:.9rem;letter-spacing:.02em;margin:0 0 20px}
+.kicker b{color:var(--violet-soft);font-weight:650}
+h1{
+  margin:0 0 16px;font-size:clamp(2.6rem,7vw,5.4rem);line-height:.95;
+  letter-spacing:-.045em;font-weight:780;max-width:14ch;
+}
+h1 .thin{display:block;font-weight:330;color:var(--muted);font-size:.42em;letter-spacing:-.01em;line-height:1.3;margin-top:18px;max-width:34ch}
+.masthead .lede{max-width:56ch;color:var(--muted);font-size:1.05rem;margin:0 0 30px}
+
+/* ---------- the 21-day strip: hero + progress + nav ---------- */
+.strip{margin:0 0 10px}
+.strip-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.strip-head p{margin:0;color:var(--dim);font-size:.88rem}
+.strip-head .count{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:680}
+.cells{display:grid;grid-template-columns:repeat(21,minmax(0,1fr));gap:6px}
+.cell{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  aspect-ratio:1/1.35;border:1px solid var(--line);border-radius:9px;
+  background:var(--surface-2);color:var(--dim);
+  font-variant-numeric:tabular-nums;font-weight:680;font-size:clamp(.62rem,1.45vw,1rem);
+  transition:transform .16s,background .16s,border-color .16s,color .16s;
+}
+.cell:hover{transform:translateY(-4px);background:#221a3c;border-color:var(--violet);color:#fff}
+.cell.w1{box-shadow:inset 0 -3px 0 var(--w1)}
+.cell.w2{box-shadow:inset 0 -3px 0 var(--w2)}
+.cell.w3{box-shadow:inset 0 -3px 0 var(--w3)}
+.cell.done{background:linear-gradient(160deg,#8b5cf6,#c084fc);border-color:#c084fc;color:#fff}
+.cell .tick{position:absolute;top:4px;right:5px;font-size:.6rem;opacity:0;transition:opacity .16s}
+.cell.done .tick{opacity:.95}
+.reset{margin:14px 0 0;background:none;border:0;padding:0;color:var(--dim);font-size:.82rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.reset:hover{color:var(--violet-soft)}
+
+/* ---------- controls ---------- */
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:44px 0 6px;padding:14px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.search{flex:1;min-width:210px;position:relative}
+.search input{width:100%;min-height:46px;padding:10px 14px;background:var(--surface-2);border:1px solid var(--line);border-radius:11px}
+.search input::placeholder{color:var(--dim)}
+.chip{padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);color:var(--muted);font-size:.86rem;font-weight:600;cursor:pointer;transition:background .16s,color .16s,border-color .16s}
+.chip:hover{color:var(--ink);border-color:#453873}
+.chip[aria-pressed=true]{background:var(--violet);border-color:var(--violet);color:#1a0b28}
+
+/* ---------- week bands + rows ---------- */
+.band{padding:46px 0 8px}
+.band-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.band-head h2{margin:0;font-size:1.45rem;letter-spacing:-.025em;font-weight:700}
+.band-head .rule{flex:1;height:1px;background:var(--line);min-width:30px}
+.band-head .days{color:var(--dim);font-size:.85rem;font-variant-numeric:tabular-nums}
+.band>p.band-note{color:var(--muted);margin:0 0 22px;max-width:58ch;font-size:.95rem}
+.band.w1 .band-head h2{color:var(--w1)}
+.band.w2 .band-head h2{color:var(--w2)}
+.band.w3 .band-head h2{color:var(--w3)}
+
+.row{
+  display:grid;grid-template-columns:62px minmax(0,1.05fr) minmax(0,1.15fr) auto;
+  gap:20px;align-items:center;padding:17px 18px 17px 8px;
+  border-bottom:1px solid var(--line-soft);transition:background .15s;
+}
+.row:first-of-type{border-top:1px solid var(--line-soft)}
+.row:hover{background:#17112a}
+.row .num{font-variant-numeric:tabular-nums;font-size:1.5rem;font-weight:760;color:#3b2f5c;letter-spacing:-.03em;text-align:right}
+.row:hover .num{color:var(--violet-soft)}
+.row.done .num{color:var(--violet)}
+.row .title{font-weight:660;font-size:1.06rem;letter-spacing:-.01em;min-width:0}
+.row .pick{margin-left:9px;padding:3px 8px;border-radius:5px;background:#2f1547;color:#f0abfc;font-size:.66rem;font-weight:700;letter-spacing:.04em;vertical-align:middle;white-space:nowrap}
+.row .io{color:var(--muted);font-size:.9rem;min-width:0}
+.row .io i{font-style:normal;color:var(--dim);padding:0 6px}
+.row .kw{
+  justify-self:end;padding:6px 13px;border:1px dashed #3a2c5c;border-radius:8px;
+  color:var(--violet-soft);font-size:.76rem;font-weight:700;letter-spacing:.06em;
+  font-family:ui-monospace,SFMono-Regular,monospace;white-space:nowrap;
+}
+.row[hidden]{display:none}
+.empty{padding:40px 8px;color:var(--dim)}
+
+/* ---------- footer ---------- */
+footer{margin-top:70px;padding:30px 0 60px;border-top:1px solid var(--line);color:var(--dim);font-size:.87rem}
+footer p{margin:0 0 8px;max-width:62ch}
+footer b{color:var(--muted);font-weight:600}
+
+@media(max-width:900px){
+  .row{grid-template-columns:48px minmax(0,1fr);gap:6px 14px;padding:15px 12px 15px 4px}
+  .row .num{font-size:1.2rem;grid-row:span 2}
+  .row .io{grid-column:2}
+  .row .kw{grid-column:2;justify-self:start;margin-top:8px}
+}
+@media(max-width:640px){
+  .masthead{padding:42px 0 26px}
+  .cells{grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}
+  .cell{aspect-ratio:1/1;font-size:.95rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition:none!important}
+  html{scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="kicker"><span class="wordmark">Codit<em>By</em>Neha</span> &nbsp;/&nbsp; a build log in 21 files. HTML, CSS and JavaScript only.</p>
+    <h1>21 days,<br>21 projects.
+      <span class="thin">Each one is a single HTML file. No build step, no install, no npm, no internet needed once it is on your machine.</span>
+    </h1>
+  </header>
+
+  <section class="strip" aria-labelledby="strip-title">
+    <div class="strip-head">
+      <p id="strip-title"><span class="count" id="count">0</span> of 21 opened</p>
+      <p id="progress-note">Nothing opened yet. Start with Day 1, or jump anywhere.</p>
+    </div>
+    <nav class="cells" aria-label="All 21 days"><a class="cell w1" data-day="1" data-title="Moving Heart" href="projects/day-01-moving-heart/index.html" title="Day 01 &middot; Moving Heart">1<span class="tick">&#10003;</span></a><a class="cell w1" data-day="2" data-title="Neon Name Generator" href="projects/day-02-neon-name/index.html" title="Day 02 &middot; Neon Name Generator">2<span class="tick">&#10003;</span></a><a class="cell w1" data-day="3" data-title="Birthday Wish Maker" href="projects/day-03-birthday-wish/index.html" title="Day 03 &middot; Birthday Wish Maker">3<span class="tick">&#10003;</span></a><a class="cell w1" data-day="4" data-title="Love Message Generator" href="projects/day-04-love-message/index.html" title="Day 04 &middot; Love Message Generator">4<span class="tick">&#10003;</span></a><a class="cell w1" data-day="5" data-title="Particle Text Animation" href="projects/day-05-particle-text/index.html" title="Day 05 &middot; Particle Text Animation">5<span class="tick">&#10003;</span></a><a class="cell w1" data-day="6" data-title="Cursor Galaxy" href="projects/day-06-cursor-galaxy/index.html" title="Day 06 &middot; Cursor Galaxy">6<span class="tick">&#10003;</span></a><a class="cell w1" data-day="7" data-title="Liquid Button" href="projects/day-07-liquid-button/index.html" title="Day 07 &middot; Liquid Button">7<span class="tick">&#10003;</span></a><a class="cell w2" data-day="8" data-title="Password Strength Checker" href="projects/day-08-password-checker/index.html" title="Day 08 &middot; Password Strength Checker">8<span class="tick">&#10003;</span></a><a class="cell w2" data-day="9" data-title="Gradient Generator" href="projects/day-09-gradient-generator/index.html" title="Day 09 &middot; Gradient Generator">9<span class="tick">&#10003;</span></a><a class="cell w2" data-day="10" data-title="Glassmorphism Generator" href="projects/day-10-glassmorphism/index.html" title="Day 10 &middot; Glassmorphism Generator">10<span class="tick">&#10003;</span></a><a class="cell w2" data-day="11" data-title="Colour Palette Extractor" href="projects/day-11-color-palette/index.html" title="Day 11 &middot; Colour Palette Extractor">11<span class="tick">&#10003;</span></a><a class="cell w2" data-day="12" data-title="Image Filter Editor" href="projects/day-12-image-filter/index.html" title="Day 12 &middot; Image Filter Editor">12<span class="tick">&#10003;</span></a><a class="cell w2" data-day="13" data-title="Image Compressor" href="projects/day-13-image-compressor/index.html" title="Day 13 &middot; Image Compressor">13<span class="tick">&#10003;</span></a><a class="cell w2" data-day="14" data-title="Digital Signature Pad" href="projects/day-14-signature-pad/index.html" title="Day 14 &middot; Digital Signature Pad">14<span class="tick">&#10003;</span></a><a class="cell w3" data-day="15" data-title="QR Code Generator" href="projects/day-15-qr-generator/index.html" title="Day 15 &middot; QR Code Generator">15<span class="tick">&#10003;</span></a><a class="cell w3" data-day="16" data-title="Bill Splitter" href="projects/day-16-bill-splitter/index.html" title="Day 16 &middot; Bill Splitter">16<span class="tick">&#10003;</span></a><a class="cell w3" data-day="17" data-title="EMI Calculator" href="projects/day-17-emi-calculator/index.html" title="Day 17 &middot; EMI Calculator">17<span class="tick">&#10003;</span></a><a class="cell w3" data-day="18" data-title="Typing Speed Test" href="projects/day-18-typing-speed/index.html" title="Day 18 &middot; Typing Speed Test">18<span class="tick">&#10003;</span></a><a class="cell w3" data-day="19" data-title="Reaction-Time Game" href="projects/day-19-reaction-game/index.html" title="Day 19 &middot; Reaction-Time Game">19<span class="tick">&#10003;</span></a><a class="cell w3" data-day="20" data-title="Catch-the-Dot Game" href="projects/day-20-catch-the-dot/index.html" title="Day 20 &middot; Catch-the-Dot Game">20<span class="tick">&#10003;</span></a><a class="cell w3" data-day="21" data-title="Mini Portfolio Generator" href="projects/day-21-portfolio-generator/index.html" title="Day 21 &middot; Mini Portfolio Generator">21<span class="tick">&#10003;</span></a></nav>
+    <button class="reset" id="reset" type="button" hidden>Clear my progress</button>
+  </section>
+
+  <div class="controls">
+    <label class="search">
+      <span class="sr-only" hidden>Search projects</span>
+      <input id="q" type="search" placeholder="Search a project, keyword or output..." autocomplete="off">
+    </label>
+    <button class="chip" type="button" data-week="all" aria-pressed="true">All 21</button>
+    <button class="chip" type="button" data-week="1" aria-pressed="false">Week 1</button>
+    <button class="chip" type="button" data-week="2" aria-pressed="false">Week 2</button>
+    <button class="chip" type="button" data-week="3" aria-pressed="false">Week 3</button>
+  </div>
+
+  <main>
+    <section class="band w1" id="week-1"><div class="band-head"><h2>Visual hooks</h2><span class="rule"></span><span class="days">Day 01&ndash;07</span></div><p class="band-note">Fast, satisfying reveals anyone can understand in two seconds.</p><a class="row" data-day="1" data-week="1" data-search="moving heart heart a name animated beating heart i made a heart that beats for your name. day 1" href="projects/day-01-moving-heart/index.html"><span class="num">01</span><span class="title">Moving Heart</span><span class="io">A name<i>&#8594;</i>Animated beating heart</span><span class="kw">HEART</span></a><a class="row" data-day="2" data-week="1" data-search="neon name generator neon name and colour glowing neon sign turn your name into a neon sign. day 2" href="projects/day-02-neon-name/index.html"><span class="num">02</span><span class="title">Neon Name Generator</span><span class="io">Name and colour<i>&#8594;</i>Glowing neon sign</span><span class="kw">NEON</span></a><a class="row" data-day="3" data-week="1" data-search="birthday wish maker birthday a name cake, balloons, confetti create a birthday surprise in 10 seconds. day 3" href="projects/day-03-birthday-wish/index.html"><span class="num">03</span><span class="title">Birthday Wish Maker</span><span class="io">A name<i>&#8594;</i>Cake, balloons, confetti</span><span class="kw">BIRTHDAY</span></a><a class="row" data-day="4" data-week="1" data-search="love message generator love two names romantic animation what happens when i enter these two names? day 4" href="projects/day-04-love-message/index.html"><span class="num">04</span><span class="title">Love Message Generator</span><span class="io">Two names<i>&#8594;</i>Romantic animation</span><span class="kw">LOVE</span></a><a class="row" data-day="5" data-week="1" data-search="particle text animation particle any text text assembled from particles your name, but made from particles. day 5" href="projects/day-05-particle-text/index.html"><span class="num">05</span><span class="title">Particle Text Animation<span class="pick">AUDIENCE PICK</span></span><span class="io">Any text<i>&#8594;</i>Text assembled from particles</span><span class="kw">PARTICLE</span></a><a class="row" data-day="6" data-week="1" data-search="cursor galaxy galaxy mouse movement stars trailing the cursor this website follows your mouse. day 6" href="projects/day-06-cursor-galaxy/index.html"><span class="num">06</span><span class="title">Cursor Galaxy</span><span class="io">Mouse movement<i>&#8594;</i>Stars trailing the cursor</span><span class="kw">GALAXY</span></a><a class="row" data-day="7" data-week="1" data-search="liquid button liquid one click liquid splash animation a button should not be this satisfying. day 7" href="projects/day-07-liquid-button/index.html"><span class="num">07</span><span class="title">Liquid Button</span><span class="io">One click<i>&#8594;</i>Liquid splash animation</span><span class="kw">LIQUID</span></a></section><section class="band w2" id="week-2"><div class="band-head"><h2>Tools worth saving</h2><span class="rule"></span><span class="days">Day 08&ndash;14</span></div><p class="band-note">Small utilities with a clear before and after.</p><a class="row" data-day="8" data-week="2" data-search="password strength checker password a password strength score and fixes is your password actually secure? day 8" href="projects/day-08-password-checker/index.html"><span class="num">08</span><span class="title">Password Strength Checker</span><span class="io">A password<i>&#8594;</i>Strength score and fixes</span><span class="kw">PASSWORD</span></a><a class="row" data-day="9" data-week="2" data-search="gradient generator gradient two colours live background plus css generate beautiful gradients instantly. day 9" href="projects/day-09-gradient-generator/index.html"><span class="num">09</span><span class="title">Gradient Generator</span><span class="io">Two colours<i>&#8594;</i>Live background plus CSS</span><span class="kw">GRADIENT</span></a><a class="row" data-day="10" data-week="2" data-search="glassmorphism generator glass sliders glass ui plus css create glass ui without writing css. day 10" href="projects/day-10-glassmorphism/index.html"><span class="num">10</span><span class="title">Glassmorphism Generator</span><span class="io">Sliders<i>&#8594;</i>Glass UI plus CSS</span><span class="kw">GLASS</span></a><a class="row" data-day="11" data-week="2" data-search="colour palette extractor palette a photo matching colour palette this tool finds the colours inside any image. day 11" href="projects/day-11-color-palette/index.html"><span class="num">11</span><span class="title">Colour Palette Extractor<span class="pick">AUDIENCE PICK</span></span><span class="io">A photo<i>&#8594;</i>Matching colour palette</span><span class="kw">PALETTE</span></a><a class="row" data-day="12" data-week="2" data-search="image filter editor filter an image filtered, downloadable image i built a mini photo editor in one file. day 12" href="projects/day-12-image-filter/index.html"><span class="num">12</span><span class="title">Image Filter Editor<span class="pick">AUDIENCE PICK</span></span><span class="io">An image<i>&#8594;</i>Filtered, downloadable image</span><span class="kw">FILTER</span></a><a class="row" data-day="13" data-week="2" data-search="image compressor compress an image smaller file, same photo reduce image size right in your browser. day 13" href="projects/day-13-image-compressor/index.html"><span class="num">13</span><span class="title">Image Compressor</span><span class="io">An image<i>&#8594;</i>Smaller file, same photo</span><span class="kw">COMPRESS</span></a><a class="row" data-day="14" data-week="2" data-search="digital signature pad signature a drawn signature transparent png download sign and download, no app needed. day 14" href="projects/day-14-signature-pad/index.html"><span class="num">14</span><span class="title">Digital Signature Pad</span><span class="io">A drawn signature<i>&#8594;</i>Transparent PNG download</span><span class="kw">SIGNATURE</span></a></section><section class="band w3" id="week-3"><div class="band-head"><h2>Challenges and the finale</h2><span class="rule"></span><span class="days">Day 15&ndash;21</span></div><p class="band-note">Shareable tools, games, and a portfolio finish.</p><a class="row" data-day="15" data-week="3" data-search="qr code generator qr text or a link scannable qr code turn any link into a qr code. day 15" href="projects/day-15-qr-generator/index.html"><span class="num">15</span><span class="title">QR Code Generator<span class="pick">AUDIENCE PICK</span></span><span class="io">Text or a link<i>&#8594;</i>Scannable QR code</span><span class="kw">QR</span></a><a class="row" data-day="16" data-week="3" data-search="bill splitter split bill and headcount amount per person no more confusion when splitting a bill. day 16" href="projects/day-16-bill-splitter/index.html"><span class="num">16</span><span class="title">Bill Splitter</span><span class="io">Bill and headcount<i>&#8594;</i>Amount per person</span><span class="kw">SPLIT</span></a><a class="row" data-day="17" data-week="3" data-search="emi calculator emi loan details monthly emi and schedule know your emi before you take the loan. day 17" href="projects/day-17-emi-calculator/index.html"><span class="num">17</span><span class="title">EMI Calculator</span><span class="io">Loan details<i>&#8594;</i>Monthly EMI and schedule</span><span class="kw">EMI</span></a><a class="row" data-day="18" data-week="3" data-search="typing speed test typing typed text wpm and accuracy how fast can you actually type? day 18" href="projects/day-18-typing-speed/index.html"><span class="num">18</span><span class="title">Typing Speed Test</span><span class="io">Typed text<i>&#8594;</i>WPM and accuracy</span><span class="kw">TYPING</span></a><a class="row" data-day="19" data-week="3" data-search="reaction-time game reaction wait, then click reaction time in ms can you beat my reaction speed? day 19" href="projects/day-19-reaction-game/index.html"><span class="num">19</span><span class="title">Reaction-Time Game</span><span class="io">Wait, then click<i>&#8594;</i>Reaction time in ms</span><span class="kw">REACTION</span></a><a class="row" data-day="20" data-week="3" data-search="catch-the-dot game game clicks on a moving dot score and timer this simple game is harder than it looks. day 20" href="projects/day-20-catch-the-dot/index.html"><span class="num">20</span><span class="title">Catch-the-Dot Game</span><span class="io">Clicks on a moving dot<i>&#8594;</i>Score and timer</span><span class="kw">GAME</span></a><a class="row" data-day="21" data-week="3" data-search="mini portfolio generator portfolio your details a personal portfolio page i built a portfolio generator in one html file. day 21" href="projects/day-21-portfolio-generator/index.html"><span class="num">21</span><span class="title">Mini Portfolio Generator<span class="pick">AUDIENCE PICK</span></span><span class="io">Your details<i>&#8594;</i>A personal portfolio page</span><span class="kw">PORTFOLIO</span></a></section>
+    <p class="empty" id="empty" hidden></p>
+  </main>
+
+  <footer>
+    <p>Every project opens on its own, and every project links back here. Inside a project use <b>&#8592;</b> and <b>&#8594;</b> to move between days, or <b>Esc</b> to come back to this page.</p>
+    <p>Nothing you type, upload or draw leaves your browser. There is no server, no account and no tracking in any of these files.</p>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('scrollbar');
+  if(bar){var draw=function(){var h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.width=(h>12?(scrollY/h)*100:0)+'%';};
+    addEventListener('scroll',draw,{passive:true});addEventListener('resize',draw);draw();}
+  var KEY='bl21.done';
+  var read=function(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')||[];}catch(e){return [];}};
+  var write=function(v){try{localStorage.setItem(KEY,JSON.stringify(v));}catch(e){}};
+
+  function paint(){
+    var done=read();
+    document.querySelectorAll('.cell').forEach(function(c){
+      var d=Number(c.dataset.day);
+      var on=done.indexOf(d)!==-1;
+      c.classList.toggle('done',on);
+      c.setAttribute('aria-label','Day '+d+', '+c.dataset.title+(on?', opened':''));
+    });
+    document.querySelectorAll('.row').forEach(function(r){
+      r.classList.toggle('done',done.indexOf(Number(r.dataset.day))!==-1);
+    });
+    var n=done.length;
+    document.getElementById('count').textContent=n;
+    document.getElementById('progress-note').textContent =
+      n===0 ? 'Nothing opened yet. Start with Day 1, or jump anywhere.'
+      : n===21 ? 'All 21 opened. Ship the series.'
+      : (21-n)+' still to open.';
+    document.getElementById('reset').hidden = n===0;
+  }
+
+  document.getElementById('reset').addEventListener('click',function(){write([]);paint();});
+
+  var q=document.getElementById('q');
+  var weekBtns=Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var week='all';
+
+  function apply(){
+    var term=q.value.trim().toLowerCase();
+    document.querySelectorAll('.band').forEach(function(b){
+      var shown=0;
+      b.querySelectorAll('.row').forEach(function(r){
+        var okWeek = week==='all' || r.dataset.week===week;
+        var okTerm = !term || r.dataset.search.indexOf(term)!==-1;
+        var vis = okWeek && okTerm;
+        r.hidden=!vis; if(vis) shown++;
+      });
+      b.hidden = shown===0;
+    });
+    var any=document.querySelectorAll('.row:not([hidden])').length;
+    document.getElementById('empty').hidden = any!==0;
+    document.getElementById('empty').textContent = any===0 ? 'No project matches "'+q.value.trim()+'". Try a keyword like qr, image or game.' : '';
+  }
+
+  q.addEventListener('input',apply);
+  weekBtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      weekBtns.forEach(function(o){o.setAttribute('aria-pressed', String(o===b));});
+      week=b.dataset.week; apply();
+    });
+  });
+
+  paint();
+  window.addEventListener('pageshow',paint);
+})();
+</script>
+</body>
+</html>
