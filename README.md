@@ -6,6 +6,14 @@ account, no server. Double-click a file and it runs.
 
 **[Open the dashboard &rarr;](index.html)**
 
+**Live:** https://neharajput0502.github.io/21-day-build-lab/
+
+## Add your own project
+
+This lab is open source and open to contributions. Build something useful or fun in a single HTML
+file, send a pull request, and it goes live here with your name on it. Start with the
+[contributing guide](CONTRIBUTING.md) and the [project template](community/TEMPLATE.html).
+
 ---
 
 ## How it fits together
@@ -17,6 +25,7 @@ account, no server. Double-click a file and it runs.
     ...
     projects/day-20-catch-the-dot/index.html
     projects/day-21-portfolio-generator/index.html
+    community/<username>/<project>/index.html   projects added by contributors
 
 The dashboard links to all 21 projects. Every project links back to the dashboard and
 sideways to the day before and the day after, so you can walk the whole series without

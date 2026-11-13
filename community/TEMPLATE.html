@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  Project:      Your project name
+  Author:       @your-github-username
+  What it does: One sentence.
+  Part of the 21-Day Build Lab: https://neharajput0502.github.io/21-day-build-lab/
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your project name · 21-Day Build Lab</title>
+<style>
+  :root { --bg:#0f0c1a; --panel:#1a1530; --text:#efeaff; --muted:#b9b0d6; --accent:#c084fc; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; background:var(--bg); color:var(--text);
+         font-family:system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:16px 20px; }
+  header a { color:var(--muted); text-decoration:none; }
+  header a:hover { color:var(--accent); }
+  main { flex:1; display:grid; place-items:center; padding:24px; }
+  .card { width:min(520px, 100%); background:var(--panel); border-radius:16px; padding:28px; }
+  h1 { margin:0 0 8px; font-size:1.6rem; }
+  p { color:var(--muted); line-height:1.5; }
+  button { font:inherit; padding:10px 18px; border:0; border-radius:10px; background:var(--accent); color:#160f24; cursor:pointer; }
+  @media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+  <header>
+    <a href="../../../index.html">&larr; 21-Day Build Lab</a>
+    <span>by @your-github-username</span>
+  </header>
+  <main>
+    <div class="card">
+      <h1>Your project name</h1>
+      <p>Say in one line what it does.</p>
+      <button id="go" type="button">Try it</button>
+      <p id="out"></p>
+    </div>
+  </main>
+<script>
+  // Your JavaScript goes here. Everything runs in the browser, so send nothing anywhere.
+  document.getElementById('go').addEventListener('click', () => {
+    document.getElementById('out').textContent = 'It works! Now replace this with your own idea.';
+  });
+</script>
+</body>
+</html>
